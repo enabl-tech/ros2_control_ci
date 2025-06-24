@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run:
-        wget https://raw.githubusercontent.com/ros-controls/ros2_control_ci/master/.github/reviewer-lottery.yml -O .github/reviewer-lottery.yml
+        wget https://raw.githubusercontent.com/enabl-tech/enbal_ci/main/.github/reviewer-lottery.yml -O .github/reviewer-lottery.yml
     - uses: uesteibar/reviewer-lottery@v3
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
