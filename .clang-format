@@ -1,0 +1,27 @@
+---
+BasedOnStyle: Google
+AlignConsecutiveAssignments: 'false'
+AlignConsecutiveDeclarations: 'false'
+AllowAllArgumentsOnNextLine: 'false'
+AllowAllConstructorInitializersOnNextLine: 'false'
+AllowAllParametersOfDeclarationOnNextLine: 'false'
+AllowShortBlocksOnASingleLine: 'true'
+AllowShortCaseLabelsOnASingleLine: 'true'
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: Always
+AllowShortLoopsOnASingleLine: 'true'
+BinPackParameters: 'true'
+BreakBeforeBraces: Mozilla
+ColumnLimit: '100'
+ContinuationIndentWidth: '42'
+Cpp11BracedListStyle: 'true'
+IndentWidth: '4'
+IndentWrappedFunctionNames: 'true'
+Language: Cpp
+MaxEmptyLinesToKeep: '1'
+ObjCBlockIndentWidth: '4'
+ReflowComments: 'false'
+SortIncludes: 'false'
+TabWidth: '4'
+
+...
