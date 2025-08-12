@@ -85,22 +85,7 @@ jobs:
           else
             echo "repos_path=" >> $GITHUB_OUTPUT
           fi
-      - uses: ros-tooling/action-ros-ci@0.4.4
-        with:
-          target-ros2-distro: ${{ inputs.ros_distro }}
-          ref: ${{ inputs.ref }}
-          package-name: ${{ steps.package_list_action.outputs.package_list }}
-          rosdep-skip-keys: rti-connext-dds-7.3.0
-          vcs-repo-file-url: |
-            /tmp/deps.repos
-          colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
-          colcon-defaults: |
-            {
-                "test": {
-                    "executor": "sequential"
-                }
-            }
-        id: action-ros
+
 
       - name: Download issue template for target failure  # Has to be a local file
         if: ${{ always() && steps.action-ros.outcome == 'failure' && github.event_name == 'schedule' }}
