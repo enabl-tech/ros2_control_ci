@@ -75,7 +75,16 @@ jobs:
             rosinstall_generator ${{ steps.package_list_action.outputs.package_list }} --rosdistro ${{ inputs.ros_distro }} \
             --deps-only --deps --upstream-development > /tmp/deps.repos && break || echo "retry #${i} .." && sleep 60;
           done
-
+      - name: Check for .repos file
+        id: check_repos
+        run: |
+          if [ -f deps.repos ]; then
+            echo "repos_path=deps.repos" >> $GITHUB_OUTPUT
+          elif [ -f /tmp/deps.repos ]; then
+            echo "repos_path=/tmp/deps.repos" >> $GITHUB_OUTPUT
+          else
+            echo "repos_path=" >> $GITHUB_OUTPUT
+          fi
       - uses: ros-tooling/action-ros-ci@0.4.4
         with:
           target-ros2-distro: ${{ inputs.ros_distro }}
