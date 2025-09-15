@@ -77,7 +77,7 @@ jobs:
       #    done
       - name: Use .repos file from repo
         run: |
-          cp ${{ env.repo_path }}/my_repo.repos /tmp/deps.repos
+          cp $ ros2_control_ci/my_repo.repos /tmp/deps.repos
       - uses: ros-tooling/action-ros-ci@0.4.5
         with:
           target-ros2-distro: ${{ inputs.ros_distro }}
